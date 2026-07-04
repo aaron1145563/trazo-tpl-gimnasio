@@ -76,7 +76,7 @@ footer{background:var(--dark);color:#71717a;text-align:center;padding:32px 24px;
 <body>
 
 <nav>
-  <div class="logo"><span>⚡</span> Nombre Gym</div>
+  <div class="logo"><span>⚡</span> <span data-f="business_name">Nombre Gym</span></div>
   <div class="nav-links">
     <a href="#clases">Clases</a>
     <a href="#planes">Planes</a>
@@ -87,10 +87,10 @@ footer{background:var(--dark);color:#71717a;text-align:center;padding:32px 24px;
 
 <section class="hero">
   <div>
-    <h1>Entrena.<br/><span>Transforma.</span><br/>Repite.</h1>
-    <p>Equipo de primera, entrenadores certificados y las mejores clases. Tu primera sesión es gratis.</p>
+    <h1 data-f-html="hero_title_html">Entrena.<br/><span>Transforma.</span><br/>Repite.</h1>
+    <p data-f="hero_subtitle">Equipo de primera, entrenadores certificados y las mejores clases. Tu primera sesión es gratis.</p>
     <div>
-      <a href="https://wa.me/521234567890?text=Hola,%20quiero%20mi%20clase%20gratis" class="btn btn-primary">Clase gratis</a>
+      <a href="https://wa.me/521234567890?text=Hola,%20quiero%20mi%20clase%20gratis" class="btn btn-primary wa-link" data-wa-msg="Hola, quiero mi clase gratis">Clase gratis</a>
       <a href="#planes" class="btn btn-outline">Ver planes</a>
     </div>
   </div>
@@ -99,7 +99,7 @@ footer{background:var(--dark);color:#71717a;text-align:center;padding:32px 24px;
 <section class="section" id="clases">
   <div class="section-tag">Clases</div>
   <h2 class="section-title">Encuentra tu disciplina</h2>
-  <div class="classes-grid">
+  <div class="classes-grid" id="servicesGrid">
     <div class="class-card reveal"><div class="class-img">🏋️</div><div class="class-body"><h3>Pesas & Fuerza</h3><p>Zona de peso libre y máquinas. Rutinas personalizadas con entrenador.</p><span class="class-tag">Todos los niveles</span></div></div>
     <div class="class-card reveal"><div class="class-img">🥊</div><div class="class-body"><h3>Box & Kickboxing</h3><p>Clases de alto impacto. Quema calorías, gana fuerza y confianza.</p><span class="class-tag">Intermedio</span></div></div>
     <div class="class-card reveal"><div class="class-img">🧘</div><div class="class-body"><h3>Yoga & Pilates</h3><p>Flexibilidad, equilibrio y paz mental. Clases matutinas y vespertinas.</p><span class="class-tag">Todos los niveles</span></div></div>
@@ -123,7 +123,7 @@ footer{background:var(--dark);color:#71717a;text-align:center;padding:32px 24px;
           <li>Horario limitado (6am-2pm)</li>
           <li>Casillero incluido</li>
         </ul>
-        <a href="https://wa.me/521234567890?text=Hola,%20quiero%20el%20plan%20básico" class="btn btn-primary" style="width:100%;text-align:center">Inscribirme</a>
+        <a href="https://wa.me/521234567890?text=Hola,%20quiero%20el%20plan%20básico" class="btn btn-primary wa-link" data-wa-msg="Hola, quiero el plan básico" style="width:100%;text-align:center">Inscribirme</a>
       </div>
       <div class="plan-card featured reveal">
         <div class="plan-name">Premium</div>
@@ -134,7 +134,7 @@ footer{background:var(--dark);color:#71717a;text-align:center;padding:32px 24px;
           <li>1 sesión de entrenador/mes</li>
           <li>Regaderas y toallas</li>
         </ul>
-        <a href="https://wa.me/521234567890?text=Hola,%20quiero%20el%20plan%20premium" class="btn btn-primary" style="width:100%;text-align:center">Inscribirme</a>
+        <a href="https://wa.me/521234567890?text=Hola,%20quiero%20el%20plan%20premium" class="btn btn-primary wa-link" data-wa-msg="Hola, quiero el plan premium" style="width:100%;text-align:center">Inscribirme</a>
       </div>
       <div class="plan-card reveal">
         <div class="plan-name">VIP</div>
@@ -145,7 +145,7 @@ footer{background:var(--dark);color:#71717a;text-align:center;padding:32px 24px;
           <li>Plan de nutrición</li>
           <li>Acceso a sauna</li>
         </ul>
-        <a href="https://wa.me/521234567890?text=Hola,%20quiero%20el%20plan%20VIP" class="btn btn-primary" style="width:100%;text-align:center">Inscribirme</a>
+        <a href="https://wa.me/521234567890?text=Hola,%20quiero%20el%20plan%20VIP" class="btn btn-primary wa-link" data-wa-msg="Hola, quiero el plan VIP" style="width:100%;text-align:center">Inscribirme</a>
       </div>
     </div>
   </div>
@@ -157,7 +157,7 @@ footer{background:var(--dark);color:#71717a;text-align:center;padding:32px 24px;
       <div class="section-tag">Horario</div>
       <h2 class="section-title">Siempre abierto para ti</h2>
     </div>
-    <div>
+    <div id="scheduleRows">
       <div class="schedule-row"><span>Lunes a Viernes</span><span>5:00 – 23:00</span></div>
       <div class="schedule-row"><span>Sábado</span><span>6:00 – 20:00</span></div>
       <div class="schedule-row"><span>Domingo</span><span>8:00 – 14:00</span></div>
@@ -171,26 +171,69 @@ footer{background:var(--dark);color:#71717a;text-align:center;padding:32px 24px;
       <div class="section-tag">Encuéntranos</div>
       <h2 class="section-title">Ubicación</h2>
       <p style="color:var(--gray);line-height:1.8;margin-bottom:20px">
-        📍 Av. Ejemplo #321, Col. Centro<br>Ciudad, Estado, CP 01234<br><br>📞 55 1234 5678
+        📍 <span data-f="address">Av. Ejemplo #321, Col. Centro, Ciudad, Estado, CP 01234</span><br><br>📞 <span data-f="phone_display">55 1234 5678</span>
       </p>
-      <a href="https://wa.me/521234567890?text=Hola,%20quiero%20información" class="btn btn-primary" id="contacto">Más info</a>
+      <a href="https://wa.me/521234567890?text=Hola,%20quiero%20información" class="btn btn-primary wa-link" data-wa-msg="Hola, quiero información" id="contacto">Más info</a>
     </div>
     <div class="map-placeholder">📍 Mapa de Google aquí</div>
   </div>
 </section>
 
-<a class="wa-float" href="https://wa.me/521234567890" target="_blank">
+<a class="wa-float wa-link" data-wa-msg="Hola" href="https://wa.me/521234567890" target="_blank">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12 2a10 10 0 00-8.493 15.262L2 22l4.875-1.476A10 10 0 1012 2z"/></svg>
 </a>
 
 <footer>
-  <p>© 2026 Nombre Gym · Todos los derechos reservados</p>
+  <p>© 2026 <span data-f="business_name">Nombre Gym</span> · Todos los derechos reservados</p>
   <p style="margin-top:8px">Sitio web por <a href="https://aaron1145563.github.io/trazo-web-landing/" target="_blank">Trazo Web Studio</a></p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+const SUPABASE_URL='https://rqjsvehqdbgfzjsoqeto.supabase.co';
+const SUPABASE_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJxanN2ZWhxZGJnZnpqc29xZXRvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIxNzkzMDMsImV4cCI6MjA5Nzc1NTMwM30.C4S3QuCCo3-X2SSscBBbkL2Y0b9NjlyWE2ErbhZdrRg';
+
+function waLink(el,phone){
+  const msg=el.getAttribute('data-wa-msg')||'Hola';
+  el.href='https://wa.me/'+phone+'?text='+encodeURIComponent(msg);
+}
+
+function applyContent(content){
+  document.querySelectorAll('[data-f]').forEach(el=>{
+    const key=el.getAttribute('data-f');
+    if(content[key]!==undefined) el.textContent=content[key];
+  });
+  document.querySelectorAll('[data-f-html]').forEach(el=>{
+    const key=el.getAttribute('data-f-html');
+    if(content[key]!==undefined) el.innerHTML=content[key];
+  });
+  if(content.whatsapp){
+    document.querySelectorAll('.wa-link').forEach(el=>waLink(el,content.whatsapp));
+  }
+  if(Array.isArray(content.hours) && content.hours.length){
+    const box=document.getElementById('scheduleRows');
+    box.innerHTML=content.hours.map(h=>`<div class="schedule-row"><span>${h.label}</span><span>${h.value}</span></div>`).join('');
+  }
+  if(Array.isArray(content.items) && content.items.length){
+    const grid=document.getElementById('servicesGrid');
+    grid.innerHTML=content.items.map(it=>`<div class="class-card reveal visible"><div class="class-img">${it.icon||'💪'}</div><div class="class-body"><h3>${it.name}</h3><p>${it.desc||''}</p>${it.tag?`<span class="class-tag">${it.tag}</span>`:''}</div></div>`).join('');
+  }
+}
+
+(function loadClientContent(){
+  const params=new URLSearchParams(window.location.search);
+  const clientId=params.get('c');
+  if(!clientId) return;
+  const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY);
+  sb.from('site_content').select('content').eq('client_id',clientId).maybeSingle()
+    .then(({data,error})=>{
+      if(error||!data||!data.content) return;
+      applyContent(data.content);
+    });
+})();
 </script>
 </body>
 </html>
